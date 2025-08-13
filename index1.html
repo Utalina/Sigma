@@ -130,13 +130,7 @@
         border-radius: 999px;
       }
 
-      /* 📝 Pengalaman & Pendidikan */
-      .job {
-        background: rgba(255, 255, 255, 0.02);
-        padding: 10px;
-        border-radius: 10px;
-        margin-bottom: 8px;
-      }
+
       .job .meta {
         color: var(--muted);
         font-size: 13px;
@@ -310,36 +304,6 @@
       </main>
     </div>
 
-    <script>
-      /* ✏️ Fungsi edit cepat CV */
-      function editCV() {
-        const name =
-          prompt(
-            "Nama lengkap:",
-            document.getElementById("fullname").textContent
-          ) || "";
-        const role =
-          prompt(
-            "Peran / posisi singkat:",
-            document.getElementById("role").textContent
-          ) || "";
-        const about =
-          prompt(
-            "Tentang saya:",
-            document.getElementById("about").textContent
-          ) || "";
-        if (name) document.getElementById("fullname").textContent = name;
-        if (role) document.getElementById("role").textContent = role;
-        if (about) document.getElementById("about").textContent = about;
-        // Update inisial foto
-        const initials = name
-          .split(" ")
-          .map((s) => s[0])
-          .slice(0, 2)
-          .join("")
-          .toUpperCase();
-        if (initials) document.getElementById("photo").textContent = initials;
-      }
-    </script>
   </body>
 </html>
+
