@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV - Andhika Sakti</title>
+    <style>
+      /* 🎨 Variabel warna tema */
+      :root {
+        --bg: #0f172a; /* Latar belakang gelap, aman untuk mata */
+        --card: #0b1220; /* Warna kartu */
+        --accent: #06b6d4; /* Warna aksen biru cerah */
+        --muted: #9aa4b2; /* Warna teks redup */
+        --glass: rgba(255, 255, 255, 0.04); /* Efek transparan */
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+
+      /* 📄 Style dasar body */
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial;
+        background: linear-gradient(180deg, var(--bg), #071022);
+        color: #e6eef6;
+        padding: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* 📦 Wrapper layout */
+      .wrap {
+        width: 100%;
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 24px;
+      }
+
+      /* 🃏 Kartu */
+      .card {
+        background: linear-gradient(180deg, var(--card), rgba(11, 18, 32, 0.6));
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 8px 30px rgba(2, 6, 23, 0.7);
+      }
+
+      /* 👤 Foto profil */
+      .photo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent), #7dd3fc);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: #04263a;
+        margin: 0 auto 16px;
+      }
+
+      .name {
+        text-align: center;
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .role {
+        text-align: center;
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+
+      /* 📬 Kontak */
+      .contact {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .pill {
+        display: inline-block;
+        background: var(--glass);
+        padding: 6px 10px;
+        border-radius: 999px;
+        margin: 6px 6px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      /* 📂 Section */
+      .section {
+        margin-bottom: 18px;
+      }
+      .section h3 {
+        margin: 0 0 8px 0;
+        font-size: 20px;
+        color: #e6f7fb;
+      }
+      .about {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      /* 📊 Skill bar */
+      .skill {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 8px 0;
+      }
+      .bar {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 999px;
+        flex: 1;
+        margin-left: 12px;
+        overflow: hidden;
+      }
+      .bar > i {
+        display: block;
+        height: 100%;
+        background: linear-gradient(90deg, var(--accent), #60a5fa);
+        border-radius: 999px;
+      }
+
+      .job .meta {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      /* 🔗 Link */
+      .links a {
+        display: inline-block;
+        margin-right: 10px;
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      /* 🔘 Tombol aksi */
+      .top-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+      .btn {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 8px 12px;
+        border-radius: 10px;
+        color: var(--muted);
+        cursor: pointer;
+      }
+      .btn.primary {
+        background: linear-gradient(90deg, var(--accent), #60a5fa);
+        border: none;
+        color: #04263a;
+      }
+
+      /* 📱 Responsif */
+      @media (max-width: 800px) {
+        .wrap {
+          grid-template-columns: 1fr;
+        }
+        .top-actions {
+          justify-content: center;
+        }
+      }
+
+      footer {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 13px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 📌 Kolom kiri -->
+      <aside class="card">
+        <img
+          src="SAYA.JPG"
+          alt="Foto Profil"
+          class="photo"
+          style="
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+          "
+        />
+        <div class="name" id="fullname">Mochamad Andhika Sakti Hermansyah</div>
+        <div class="role" id="role">Pelajar • SMKN 1 Tempel</div>
+
+        <!-- 📍 Info kontak -->
+        <div class="section">
+          <div class="contact">
+            <div class="pill">📍 Sleman, Yogyakarta, Indonesia</div>
+            <div class="pill">✉️ mochamadandhika505@gmail.com</div>
+            <div class="pill">📱 +62 0858-0015-7066</div>
+          </div>
+        </div>
+
+        <!-- 🔗 Link sosial -->
+        <div class="section">
+          <h3>Tautan</h3>
+          <div class="links">
+            <a href="https://www.instagram.com/mc_andhika505/" id="Instagram"
+              >Instagram</a
+            >
+            <a href="https://www.youtube.com/@Mang-Rexius505" id="Youtube"
+              >Youtube</a
+            >
+            <a href="http://www.smkn1tempel.sch.id/" id="SMK">SMK</a>
+          </div>
+        </div>
+
+        <!-- 💡 Skill -->
+        <div class="section">
+          <h3>Keahlian</h3>
+          <div class="skill">
+            <div>HTML</div>
+            <div class="bar"><i style="width: 90%"></i></div>
+          </div>
+          <div class="skill">
+            <div>CSS</div>
+            <div class="bar"><i style="width: 45%"></i></div>
+          </div>
+          <div class="skill">
+            <div>English</div>
+            <div class="bar"><i style="width: 60%"></i></div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- 📌 Kolom kanan -->
+      <main class="card">
+        <!-- Tombol aksi -->
+        <div class="top-actions">
+          <button class="btn primary" onclick="window.print()">
+            📄 Print / Save PDF
+          </button>
+        </div>
+
+        <!-- Tentang Saya -->
+        <section class="section">
+          <h3>Tentang Saya</h3>
+          <p class="about" id="about">
+            Halo! Aku pelajar yang baru belajar dunia web. Masih paham dasarnya
+            aja, terutama HTML, tapi semangatku gede banget buat terus
+            berkembang. Aku suka ngulik tampilan sederhana biar tetap rapi dan
+            enak dilihat. Kadang sambil belajar, aku dengerin musik biar nggak
+            tegang dan ide tetap ngalir.
+          </p>
+        </section>
+
+        <!-- Pengalaman -->
+        <section class="section">
+          <h3>Pengalaman</h3>
+          <div class="job">1. Mitra Shopee Food</div>
+          <div class="job">2. Membuat website sederhana dengan VScode</div>
+          <div class="job">3. Konfigurasi Jaringan LAN</div>
+          <div class="job">
+            4. Bekerja sampingan dengan platform game Rise of Kingdoms
+          </div>
+        </section>
+
+        <!-- Pendidikan -->
+        <section class="section">
+          <h3>Pendidikan</h3>
+          <div class="job">
+            <strong>SMKN 1 Tempel</strong>
+            <div class="meta">2021 — sekarang</div>
+          </div>
+        </section>
+
+        <!-- Link ke CV Formal -->
+        <section class="section">
+          <h3>Versi Formal</h3>
+          <div class="links">
+            <a
+              href="D:\SEKOLAH\Dokumen\Sakti_SMKN 1 Tempel_Curriculum Vitae.docx"
+              target="_blank"
+              >📄 Lihat CV Formal</a
+            >
+          </div>
+        </section>
+
+        <footer>Made with coffee macchiato☕</footer>
+      </main>
+    </div>
+  </body>
+</html>

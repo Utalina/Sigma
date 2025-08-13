@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Website Dua Pilihan Link</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --card: #0b1220;
+        --accent: #7c3aed;
+        --glass: rgba(68, 26, 26, 0.05);
+        --text: #e6eef8;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial;
+        background: linear-gradient(135deg, #071029 0%, #0b1530 100%);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .card {
+        width: min(820px, 94%);
+        padding: 28px;
+        border-radius: 16px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          rgba(0, 0, 0, 0.25)
+        );
+        box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+        backdrop-filter: blur(6px);
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 1.6rem;
+        letter-spacing: 0.2px;
+      }
+      p.lead {
+        margin: 0 0 20px;
+        color: #cfdff6;
+        opacity: 0.9;
+      }
+      .links {
+        display: flex;
+        gap: 16px;
+      }
+      .link-card {
+        flex: 1;
+        padding: 18px;
+        border-radius: 12px;
+        background: var(--glass);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        text-align: center;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+      .link-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(12, 18, 40, 0.6);
+      }
+      .link-card h2 {
+        margin: 0 0 8px;
+        font-size: 1.05rem;
+      }
+      .link-card p {
+        margin: 0 0 12px;
+        color: #d7e6ff;
+        opacity: 0.85;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 16px;
+        border-radius: 10px;
+        background: linear-gradient(90deg, var(--accent), #4c1d95);
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .btn.secondary {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        color: var(--text);
+      }
+      footer {
+        margin-top: 16px;
+        text-align: center;
+        color: #9fb0d9;
+        opacity: 0.9;
+        font-size: 0.9rem;
+      }
+
+      /* modal */
+      .modal-backdrop {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(2, 6, 23, 0.6);
+      }
+      .modal {
+        width: min(520px, 94%);
+        background: linear-gradient(180deg, #071028 0%, #081833 100%);
+        border-radius: 12px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .modal h3 {
+        margin: 0 0 8px;
+      }
+      .close {
+        float: right;
+        background: transparent;
+        border: 0;
+        color: #cfe6ff;
+        font-weight: 700;
+        font-size: 1rem;
+      }
+
+      @media (max-width: 640px) {
+        .links {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card" role="main">
+      <h1>Halo, selamat datang~ 💫</h1>
+      <p class="lead">Berikut adalah link untuk menuju ke CV</p>
+
+      <section class="links">
+        <article class="link-card">
+          <h2>Sakti</h2>
+
+          <a class="btn" href="index1.html" rel="noopener">Pencet Aku</a>
+        </article>
+
+          >
+        </article>
+      </section>
+
+      <footer>Terimakasih Y.T.H HRD</footer>
+    </main>
+
+    <!-- Modal -->
+    <div
+      id="modalBackdrop"
+      class="modal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+    >
+      <div class="modal" role="document">
+        <button class="close" id="closeModal">✕</button>
+        <h3>Kejutan kecil 🎁</h3>
+        <p>
+          Hei, kamu pilih link kedua. Ini pesan manis dari situs:
+          <strong>"Jangan lupa tersenyum hari ini!"</strong>
+        </p>
+        <p>
+          Kalau mau, aku bisa ubah tombol ini jadi link ke mana pun (Instagram,
+          tugas sekolah, atau file kamu).
+        </p>
+        <div style="margin-top: 12px; text-align: right">
+          <a id="modalAction" class="btn" href="#">Oke, lucu!</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const openBtn = document.getElementById("openModal");
+      const modal = document.getElementById("modalBackdrop");
+      const closeBtn = document.getElementById("closeModal");
+      const modalAction = document.getElementById("modalAction");
+
+      openBtn.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modal.setAttribute("aria-hidden", "false");
+      });
+      closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+        modal.setAttribute("aria-hidden", "true");
+      });
+      // klik di luar modal juga tutup
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+          modal.setAttribute("aria-hidden", "true");
+        }
+      });
+
+      // contoh: ubah aksi modal jadi membuka link lain
+      modalAction.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.open("https://example.com", "_blank");
+      });
+    </script>
+  </body>
+</html>
